@@ -1,5 +1,6 @@
 package com.tare.SpringJDBC;
 
+
 import com.tare.SpringJDBC.model.Student;
 import com.tare.SpringJDBC.service.StudentService;
 import org.springframework.boot.SpringApplication;
@@ -15,15 +16,22 @@ public class SpringJdbcApplication {
 		ApplicationContext context= SpringApplication.run(SpringJdbcApplication.class, args);
 
 		Student s = context.getBean(Student.class);
+
 		s.setRollNo(104);
-		s.setName("Tare");
-		s.setMarks(78);
+		s.setName("Tarik");
+		s.setMarks(75);
 
 		StudentService service = context.getBean(StudentService.class);
+
 		service.addStudent(s);
 
 		List<Student> students = service.getStudents();
 		System.out.println(students);
+
+
+
+		//System.out.println("Hello");
+
 	}
 
 }
